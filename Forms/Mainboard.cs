@@ -83,5 +83,17 @@ namespace student_scoringV2.Forms
             AddStudent addStudent = new AddStudent();
             addStudent.Show();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AddScore addScore = new AddScore();
+            addScore.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this
+        }
     }
 }

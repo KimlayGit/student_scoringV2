@@ -114,6 +114,12 @@
     <Compile Include="Forms\Mainboard.Designer.cs">
       <DependentUpon>Mainboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ViewStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ViewStudent.Designer.cs">
+      <DependentUpon>ViewStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Student_Scoring_ManagementDataSet.Designer.cs">
@@ -153,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Mainboard.resx">
       <DependentUpon>Mainboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ViewStudent.resx">
+      <DependentUpon>ViewStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
