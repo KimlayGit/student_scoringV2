@@ -41,6 +41,10 @@
             this.btn_add = new System.Windows.Forms.Button();
             this.cb_role = new System.Windows.Forms.ComboBox();
             this.btn_back = new System.Windows.Forms.Button();
+            this.btn_edit = new System.Windows.Forms.Button();
+            this.btn_delete = new System.Windows.Forms.Button();
+            this.btn_search = new System.Windows.Forms.Button();
+            this.btn_cancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label10
@@ -142,11 +146,11 @@
             // btn_add
             // 
             this.btn_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_add.Location = new System.Drawing.Point(425, 778);
+            this.btn_add.Location = new System.Drawing.Point(253, 778);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(182, 51);
             this.btn_add.TabIndex = 52;
-            this.btn_add.Text = "Add";
+            this.btn_add.Text = "New  User";
             this.btn_add.UseVisualStyleBackColor = true;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
@@ -162,7 +166,7 @@
             // btn_back
             // 
             this.btn_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_back.Location = new System.Drawing.Point(425, 859);
+            this.btn_back.Location = new System.Drawing.Point(330, 862);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(182, 51);
             this.btn_back.TabIndex = 58;
@@ -170,11 +174,59 @@
             this.btn_back.UseVisualStyleBackColor = true;
             this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             // 
+            // btn_edit
+            // 
+            this.btn_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_edit.Location = new System.Drawing.Point(441, 778);
+            this.btn_edit.Name = "btn_edit";
+            this.btn_edit.Size = new System.Drawing.Size(182, 51);
+            this.btn_edit.TabIndex = 59;
+            this.btn_edit.Text = "Edit";
+            this.btn_edit.UseVisualStyleBackColor = true;
+            this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
+            // 
+            // btn_delete
+            // 
+            this.btn_delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_delete.Location = new System.Drawing.Point(629, 778);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(182, 51);
+            this.btn_delete.TabIndex = 60;
+            this.btn_delete.Text = "Delete";
+            this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
+            // 
+            // btn_search
+            // 
+            this.btn_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_search.Location = new System.Drawing.Point(749, 378);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(164, 50);
+            this.btn_search.TabIndex = 61;
+            this.btn_search.Text = "Search";
+            this.btn_search.UseVisualStyleBackColor = true;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
+            // 
+            // btn_cancel
+            // 
+            this.btn_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cancel.Location = new System.Drawing.Point(556, 862);
+            this.btn_cancel.Name = "btn_cancel";
+            this.btn_cancel.Size = new System.Drawing.Size(182, 51);
+            this.btn_cancel.TabIndex = 62;
+            this.btn_cancel.Text = "Cancel";
+            this.btn_cancel.UseVisualStyleBackColor = true;
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
+            // 
             // AddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1079, 1006);
+            this.Controls.Add(this.btn_cancel);
+            this.Controls.Add(this.btn_search);
+            this.Controls.Add(this.btn_delete);
+            this.Controls.Add(this.btn_edit);
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.cb_role);
             this.Controls.Add(this.btn_add);
@@ -210,5 +262,9 @@
         private System.Windows.Forms.Button btn_add;
         private System.Windows.Forms.ComboBox cb_role;
         private System.Windows.Forms.Button btn_back;
+        private System.Windows.Forms.Button btn_edit;
+        private System.Windows.Forms.Button btn_delete;
+        private System.Windows.Forms.Button btn_search;
+        private System.Windows.Forms.Button btn_cancel;
     }
 }

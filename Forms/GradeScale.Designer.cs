@@ -43,6 +43,10 @@
             this.tb_gpa = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tb_gradeletter = new System.Windows.Forms.TextBox();
+            this.btn_cancel = new System.Windows.Forms.Button();
+            this.btn_delete = new System.Windows.Forms.Button();
+            this.btn_edit = new System.Windows.Forms.Button();
+            this.btn_search = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label4
@@ -58,7 +62,7 @@
             // btn_back
             // 
             this.btn_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_back.Location = new System.Drawing.Point(641, 812);
+            this.btn_back.Location = new System.Drawing.Point(470, 808);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(182, 51);
             this.btn_back.TabIndex = 77;
@@ -69,7 +73,7 @@
             // btn_add
             // 
             this.btn_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_add.Location = new System.Drawing.Point(641, 732);
+            this.btn_add.Location = new System.Drawing.Point(390, 730);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(182, 51);
             this.btn_add.TabIndex = 76;
@@ -192,11 +196,59 @@
             this.tb_gradeletter.Size = new System.Drawing.Size(284, 35);
             this.tb_gradeletter.TabIndex = 84;
             // 
+            // btn_cancel
+            // 
+            this.btn_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cancel.Location = new System.Drawing.Point(700, 808);
+            this.btn_cancel.Name = "btn_cancel";
+            this.btn_cancel.Size = new System.Drawing.Size(182, 51);
+            this.btn_cancel.TabIndex = 87;
+            this.btn_cancel.Text = "Cancel";
+            this.btn_cancel.UseVisualStyleBackColor = true;
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
+            // 
+            // btn_delete
+            // 
+            this.btn_delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_delete.Location = new System.Drawing.Point(776, 730);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(182, 51);
+            this.btn_delete.TabIndex = 86;
+            this.btn_delete.Text = "Delete";
+            this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
+            // 
+            // btn_edit
+            // 
+            this.btn_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_edit.Location = new System.Drawing.Point(588, 730);
+            this.btn_edit.Name = "btn_edit";
+            this.btn_edit.Size = new System.Drawing.Size(182, 51);
+            this.btn_edit.TabIndex = 85;
+            this.btn_edit.Text = "Edit";
+            this.btn_edit.UseVisualStyleBackColor = true;
+            this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
+            // 
+            // btn_search
+            // 
+            this.btn_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_search.Location = new System.Drawing.Point(957, 357);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(164, 50);
+            this.btn_search.TabIndex = 88;
+            this.btn_search.Text = "Search";
+            this.btn_search.UseVisualStyleBackColor = true;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
+            // 
             // GradeScale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1309, 1054);
+            this.Controls.Add(this.btn_search);
+            this.Controls.Add(this.btn_cancel);
+            this.Controls.Add(this.btn_delete);
+            this.Controls.Add(this.btn_edit);
             this.Controls.Add(this.tb_gradeletter);
             this.Controls.Add(this.tb_gpa);
             this.Controls.Add(this.label6);
@@ -236,5 +288,9 @@
         private System.Windows.Forms.TextBox tb_gpa;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tb_gradeletter;
+        private System.Windows.Forms.Button btn_cancel;
+        private System.Windows.Forms.Button btn_delete;
+        private System.Windows.Forms.Button btn_edit;
+        private System.Windows.Forms.Button btn_search;
     }
 }

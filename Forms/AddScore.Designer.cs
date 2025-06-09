@@ -49,6 +49,10 @@
             this.cb_recordby = new System.Windows.Forms.ComboBox();
             this.cb_classnamae = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.btn_cancel = new System.Windows.Forms.Button();
+            this.btn_delete = new System.Windows.Forms.Button();
+            this.btn_edit = new System.Windows.Forms.Button();
+            this.btn_search = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label9
@@ -103,7 +107,7 @@
             // btn_back
             // 
             this.btn_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_back.Location = new System.Drawing.Point(527, 937);
+            this.btn_back.Location = new System.Drawing.Point(434, 981);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(182, 51);
             this.btn_back.TabIndex = 61;
@@ -114,7 +118,7 @@
             // btn_add
             // 
             this.btn_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_add.Location = new System.Drawing.Point(527, 862);
+            this.btn_add.Location = new System.Drawing.Point(352, 903);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(182, 51);
             this.btn_add.TabIndex = 60;
@@ -256,12 +260,60 @@
             this.label10.TabIndex = 75;
             this.label10.Text = "Class Id:";
             // 
+            // btn_cancel
+            // 
+            this.btn_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cancel.Location = new System.Drawing.Point(652, 981);
+            this.btn_cancel.Name = "btn_cancel";
+            this.btn_cancel.Size = new System.Drawing.Size(182, 51);
+            this.btn_cancel.TabIndex = 79;
+            this.btn_cancel.Text = "Cancel";
+            this.btn_cancel.UseVisualStyleBackColor = true;
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
+            // 
+            // btn_delete
+            // 
+            this.btn_delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_delete.Location = new System.Drawing.Point(728, 903);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(182, 51);
+            this.btn_delete.TabIndex = 78;
+            this.btn_delete.Text = "Delete";
+            this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
+            // 
+            // btn_edit
+            // 
+            this.btn_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_edit.Location = new System.Drawing.Point(540, 903);
+            this.btn_edit.Name = "btn_edit";
+            this.btn_edit.Size = new System.Drawing.Size(182, 51);
+            this.btn_edit.TabIndex = 77;
+            this.btn_edit.Text = "Edit";
+            this.btn_edit.UseVisualStyleBackColor = true;
+            this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
+            // 
+            // btn_search
+            // 
+            this.btn_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_search.Location = new System.Drawing.Point(937, 277);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(164, 50);
+            this.btn_search.TabIndex = 80;
+            this.btn_search.Text = "Search";
+            this.btn_search.UseVisualStyleBackColor = true;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
+            // 
             // AddScore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1258, 1259);
+            this.Controls.Add(this.btn_search);
+            this.Controls.Add(this.btn_cancel);
+            this.Controls.Add(this.btn_delete);
+            this.Controls.Add(this.btn_edit);
             this.Controls.Add(this.cb_classnamae);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.cb_recordby);
@@ -313,5 +365,9 @@
         private System.Windows.Forms.ComboBox cb_recordby;
         private System.Windows.Forms.ComboBox cb_classnamae;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btn_cancel;
+        private System.Windows.Forms.Button btn_delete;
+        private System.Windows.Forms.Button btn_edit;
+        private System.Windows.Forms.Button btn_search;
     }
 }

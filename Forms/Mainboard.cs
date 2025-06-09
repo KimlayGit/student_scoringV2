@@ -25,7 +25,9 @@ namespace student_scoringV2.Forms
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            this.Close();
+            mainfrm mainForm = new mainfrm();
+            mainForm.Show();
         }
 
         private void btn_addclass_Click(object sender, EventArgs e)
@@ -93,7 +95,16 @@ namespace student_scoringV2.Forms
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this
+            this.Hide();
+            ViewStudent viewStudent = new ViewStudent();
+            viewStudent.Show();
+        }
+
+        private void btn_scorestudent_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            //ViewScore scoreStudent = new ViewScore();
+            //scoreStudent.Show();
         }
     }
 }
