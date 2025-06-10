@@ -114,6 +114,12 @@
     <Compile Include="Forms\Mainboard.Designer.cs">
       <DependentUpon>Mainboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ViewScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ViewScore.Designer.cs">
+      <DependentUpon>ViewScore.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ViewStudent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Mainboard.resx">
       <DependentUpon>Mainboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ViewScore.resx">
+      <DependentUpon>ViewScore.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ViewStudent.resx">
       <DependentUpon>ViewStudent.cs</DependentUpon>

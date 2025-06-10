@@ -103,8 +103,9 @@ namespace student_scoringV2.Forms
         private void btn_scorestudent_Click(object sender, EventArgs e)
         {
             this.Close();
-            //ViewScore scoreStudent = new ViewScore();
-            //scoreStudent.Show();
+            ViewScore viewScore = new ViewScore();
+            viewScore.Show();
+          
         }
     }
 }

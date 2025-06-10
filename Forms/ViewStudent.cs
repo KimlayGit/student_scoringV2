@@ -82,8 +82,8 @@ namespace student_scoringV2.Forms
             // TODO: This line of code loads data into the 'student_Scoring_ManagementDataSet.students' table. You can move, or remove it, as needed.
             this.studentsTableAdapter.Fill(this.student_Scoring_ManagementDataSet.students);
             DisplayStudent();
-            cb_class.Items.Add("By ID");
-            cb_class.Items.Add("By Name");
+            cb_class.Items.Add("ID");
+            cb_class.Items.Add("Name");
         }
 
         private void tb_seach_TextChanged(object sender, EventArgs e)
