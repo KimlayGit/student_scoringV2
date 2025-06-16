@@ -91,7 +91,7 @@
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(223, 51);
             this.btn_add.TabIndex = 51;
-            this.btn_add.Text = "Add Department";
+            this.btn_add.Text = "New Department";
             this.btn_add.UseVisualStyleBackColor = true;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
@@ -218,6 +218,7 @@
             this.Controls.Add(this.tb_id);
             this.Controls.Add(this.label2);
             this.Name = "AddDepartment";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddDepartment";
             this.Load += new System.EventHandler(this.AddDepartment_Load);
             this.ResumeLayout(false);

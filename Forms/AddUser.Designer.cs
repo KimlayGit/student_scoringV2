@@ -241,6 +241,7 @@
             this.Controls.Add(this.tb_id);
             this.Controls.Add(this.label2);
             this.Name = "AddUser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddUser";
             this.ResumeLayout(false);
             this.PerformLayout();

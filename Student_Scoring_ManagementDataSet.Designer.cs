@@ -52,8 +52,6 @@ namespace student_scoringV2 {
         
         private global::System.Data.DataRelation relationFK_scores_classes;
         
-        private global::System.Data.DataRelation relationFK_scores_courses;
-        
         private global::System.Data.DataRelation relationFK_scores_students;
         
         private global::System.Data.DataRelation relationFK_scores_teachers;
@@ -413,7 +411,6 @@ namespace student_scoringV2 {
             this.relationFK__courses__grade_s__6477ECF3 = this.Relations["FK__courses__grade_s__6477ECF3"];
             this.relationFK_departments_head_of_department = this.Relations["FK_departments_head_of_department"];
             this.relationFK_scores_classes = this.Relations["FK_scores_classes"];
-            this.relationFK_scores_courses = this.Relations["FK_scores_courses"];
             this.relationFK_scores_students = this.Relations["FK_scores_students"];
             this.relationFK_scores_teachers = this.Relations["FK_scores_teachers"];
             this.relationFK__students__class___5812160E = this.Relations["FK__students__class___5812160E"];
@@ -467,10 +464,6 @@ namespace student_scoringV2 {
                         this.tableclasses.idColumn}, new global::System.Data.DataColumn[] {
                         this.tablescores.class_idColumn}, false);
             this.Relations.Add(this.relationFK_scores_classes);
-            this.relationFK_scores_courses = new global::System.Data.DataRelation("FK_scores_courses", new global::System.Data.DataColumn[] {
-                        this.tablecourses.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tablescores.course_idColumn}, false);
-            this.Relations.Add(this.relationFK_scores_courses);
             this.relationFK_scores_students = new global::System.Data.DataRelation("FK_scores_students", new global::System.Data.DataColumn[] {
                         this.tablestudents.idColumn}, new global::System.Data.DataColumn[] {
                         this.tablescores.student_idColumn}, false);
@@ -2339,8 +2332,6 @@ namespace student_scoringV2 {
             
             private global::System.Data.DataColumn columnstudent_id;
             
-            private global::System.Data.DataColumn columncourse_id;
-            
             private global::System.Data.DataColumn columnclass_id;
             
             private global::System.Data.DataColumn columnrecorded_by;
@@ -2354,6 +2345,10 @@ namespace student_scoringV2 {
             private global::System.Data.DataColumn columngrade_letter;
             
             private global::System.Data.DataColumn columndate_recorded;
+            
+            private global::System.Data.DataColumn columnstudent_name;
+            
+            private global::System.Data.DataColumn columncourse_name;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -2401,14 +2396,6 @@ namespace student_scoringV2 {
             public global::System.Data.DataColumn student_idColumn {
                 get {
                     return this.columnstudent_id;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn course_idColumn {
-                get {
-                    return this.columncourse_id;
                 }
             }
             
@@ -2470,6 +2457,22 @@ namespace student_scoringV2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn student_nameColumn {
+                get {
+                    return this.columnstudent_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn course_nameColumn {
+                get {
+                    return this.columncourse_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2505,10 +2508,9 @@ namespace student_scoringV2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public scoresRow AddscoresRow(studentsRow parentstudentsRowByFK_scores_students, coursesRow parentcoursesRowByFK_scores_courses, classesRow parentclassesRowByFK_scores_classes, teachersRow parentteachersRowByFK_scores_teachers, decimal score_value, decimal maximum_score, decimal percentage, string grade_letter, System.DateTime date_recorded) {
+            public scoresRow AddscoresRow(studentsRow parentstudentsRowByFK_scores_students, classesRow parentclassesRowByFK_scores_classes, teachersRow parentteachersRowByFK_scores_teachers, decimal score_value, decimal maximum_score, decimal percentage, string grade_letter, System.DateTime date_recorded, string student_name, string course_name) {
                 scoresRow rowscoresRow = ((scoresRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
                         null,
                         null,
                         null,
@@ -2517,18 +2519,17 @@ namespace student_scoringV2 {
                         maximum_score,
                         percentage,
                         grade_letter,
-                        date_recorded};
+                        date_recorded,
+                        student_name,
+                        course_name};
                 if ((parentstudentsRowByFK_scores_students != null)) {
                     columnValuesArray[1] = parentstudentsRowByFK_scores_students[0];
                 }
-                if ((parentcoursesRowByFK_scores_courses != null)) {
-                    columnValuesArray[2] = parentcoursesRowByFK_scores_courses[0];
-                }
                 if ((parentclassesRowByFK_scores_classes != null)) {
-                    columnValuesArray[3] = parentclassesRowByFK_scores_classes[0];
+                    columnValuesArray[2] = parentclassesRowByFK_scores_classes[0];
                 }
                 if ((parentteachersRowByFK_scores_teachers != null)) {
-                    columnValuesArray[4] = parentteachersRowByFK_scores_teachers[0];
+                    columnValuesArray[3] = parentteachersRowByFK_scores_teachers[0];
                 }
                 rowscoresRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowscoresRow);
@@ -2561,7 +2562,6 @@ namespace student_scoringV2 {
             internal void InitVars() {
                 this.columnid = base.Columns["id"];
                 this.columnstudent_id = base.Columns["student_id"];
-                this.columncourse_id = base.Columns["course_id"];
                 this.columnclass_id = base.Columns["class_id"];
                 this.columnrecorded_by = base.Columns["recorded_by"];
                 this.columnscore_value = base.Columns["score_value"];
@@ -2569,6 +2569,8 @@ namespace student_scoringV2 {
                 this.columnpercentage = base.Columns["percentage"];
                 this.columngrade_letter = base.Columns["grade_letter"];
                 this.columndate_recorded = base.Columns["date_recorded"];
+                this.columnstudent_name = base.Columns["student_name"];
+                this.columncourse_name = base.Columns["course_name"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2578,8 +2580,6 @@ namespace student_scoringV2 {
                 base.Columns.Add(this.columnid);
                 this.columnstudent_id = new global::System.Data.DataColumn("student_id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnstudent_id);
-                this.columncourse_id = new global::System.Data.DataColumn("course_id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncourse_id);
                 this.columnclass_id = new global::System.Data.DataColumn("class_id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnclass_id);
                 this.columnrecorded_by = new global::System.Data.DataColumn("recorded_by", typeof(int), null, global::System.Data.MappingType.Element);
@@ -2594,6 +2594,10 @@ namespace student_scoringV2 {
                 base.Columns.Add(this.columngrade_letter);
                 this.columndate_recorded = new global::System.Data.DataColumn("date_recorded", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndate_recorded);
+                this.columnstudent_name = new global::System.Data.DataColumn("student_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstudent_name);
+                this.columncourse_name = new global::System.Data.DataColumn("course_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncourse_name);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -2603,7 +2607,6 @@ namespace student_scoringV2 {
                 this.columnid.ReadOnly = true;
                 this.columnid.Unique = true;
                 this.columnstudent_id.AllowDBNull = false;
-                this.columncourse_id.AllowDBNull = false;
                 this.columnclass_id.AllowDBNull = false;
                 this.columnrecorded_by.AllowDBNull = false;
                 this.columnscore_value.AllowDBNull = false;
@@ -2612,6 +2615,10 @@ namespace student_scoringV2 {
                 this.columngrade_letter.AllowDBNull = false;
                 this.columngrade_letter.MaxLength = 3;
                 this.columndate_recorded.AllowDBNull = false;
+                this.columnstudent_name.ReadOnly = true;
+                this.columnstudent_name.MaxLength = 101;
+                this.columncourse_name.AllowDBNull = false;
+                this.columncourse_name.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4270,17 +4277,6 @@ namespace student_scoringV2 {
             public void Setupdated_atNull() {
                 this[this.tablecourses.updated_atColumn] = global::System.Convert.DBNull;
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public scoresRow[] GetscoresRows() {
-                if ((this.Table.ChildRelations["FK_scores_courses"] == null)) {
-                    return new scoresRow[0];
-                }
-                else {
-                    return ((scoresRow[])(base.GetChildRows(this.Table.ChildRelations["FK_scores_courses"])));
-                }
-            }
         }
         
         /// <summary>
@@ -4637,17 +4633,6 @@ namespace student_scoringV2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int course_id {
-                get {
-                    return ((int)(this[this.tablescores.course_idColumn]));
-                }
-                set {
-                    this[this.tablescores.course_idColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int class_id {
                 get {
                     return ((int)(this[this.tablescores.class_idColumn]));
@@ -4725,23 +4710,39 @@ namespace student_scoringV2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string student_name {
+                get {
+                    try {
+                        return ((string)(this[this.tablescores.student_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'student_name\' in table \'scores\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablescores.student_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string course_name {
+                get {
+                    return ((string)(this[this.tablescores.course_nameColumn]));
+                }
+                set {
+                    this[this.tablescores.course_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public classesRow classesRow {
                 get {
                     return ((classesRow)(this.GetParentRow(this.Table.ParentRelations["FK_scores_classes"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_scores_classes"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public coursesRow coursesRow {
-                get {
-                    return ((coursesRow)(this.GetParentRow(this.Table.ParentRelations["FK_scores_courses"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_scores_courses"]);
                 }
             }
             
@@ -4765,6 +4766,18 @@ namespace student_scoringV2 {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_scores_teachers"]);
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isstudent_nameNull() {
+                return this.IsNull(this.tablescores.student_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setstudent_nameNull() {
+                this[this.tablescores.student_nameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7945,7 +7958,6 @@ SELECT id, role_name, code, created_at, updated_at FROM roles WHERE (id = @id)";
             tableMapping.DataSetTable = "scores";
             tableMapping.ColumnMappings.Add("id", "id");
             tableMapping.ColumnMappings.Add("student_id", "student_id");
-            tableMapping.ColumnMappings.Add("course_id", "course_id");
             tableMapping.ColumnMappings.Add("class_id", "class_id");
             tableMapping.ColumnMappings.Add("recorded_by", "recorded_by");
             tableMapping.ColumnMappings.Add("score_value", "score_value");
@@ -7953,60 +7965,9 @@ SELECT id, role_name, code, created_at, updated_at FROM roles WHERE (id = @id)";
             tableMapping.ColumnMappings.Add("percentage", "percentage");
             tableMapping.ColumnMappings.Add("grade_letter", "grade_letter");
             tableMapping.ColumnMappings.Add("date_recorded", "date_recorded");
+            tableMapping.ColumnMappings.Add("student_name", "student_name");
+            tableMapping.ColumnMappings.Add("course_name", "course_name");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[scores] WHERE (([id] = @Original_id) AND ([student_id] = @Original_student_id) AND ([course_id] = @Original_course_id) AND ([class_id] = @Original_class_id) AND ([recorded_by] = @Original_recorded_by) AND ([score_value] = @Original_score_value) AND ([maximum_score] = @Original_maximum_score) AND ([percentage] = @Original_percentage) AND ([grade_letter] = @Original_grade_letter) AND ([date_recorded] = @Original_date_recorded))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_student_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_course_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "course_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_class_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "class_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_recorded_by", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "recorded_by", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_score_value", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 5, 2, "score_value", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_maximum_score", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 5, 2, "maximum_score", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_percentage", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 5, 2, "percentage", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_grade_letter", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "grade_letter", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_date_recorded", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "date_recorded", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[scores] ([student_id], [course_id], [class_id], [recorded_by], [score_value], [maximum_score], [percentage], [grade_letter], [date_recorded]) VALUES (@student_id, @course_id, @class_id, @recorded_by, @score_value, @maximum_score, @percentage, @grade_letter, @date_recorded);
-SELECT id, student_id, course_id, class_id, recorded_by, score_value, maximum_score, percentage, grade_letter, date_recorded FROM scores WHERE (id = SCOPE_IDENTITY())";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@student_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@course_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "course_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@class_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "class_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@recorded_by", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "recorded_by", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@score_value", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 5, 2, "score_value", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@maximum_score", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 5, 2, "maximum_score", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@percentage", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 5, 2, "percentage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@grade_letter", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "grade_letter", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@date_recorded", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "date_recorded", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[scores] SET [student_id] = @student_id, [course_id] = @course_id, [class_id] = @class_id, [recorded_by] = @recorded_by, [score_value] = @score_value, [maximum_score] = @maximum_score, [percentage] = @percentage, [grade_letter] = @grade_letter, [date_recorded] = @date_recorded WHERE (([id] = @Original_id) AND ([student_id] = @Original_student_id) AND ([course_id] = @Original_course_id) AND ([class_id] = @Original_class_id) AND ([recorded_by] = @Original_recorded_by) AND ([score_value] = @Original_score_value) AND ([maximum_score] = @Original_maximum_score) AND ([percentage] = @Original_percentage) AND ([grade_letter] = @Original_grade_letter) AND ([date_recorded] = @Original_date_recorded));
-SELECT id, student_id, course_id, class_id, recorded_by, score_value, maximum_score, percentage, grade_letter, date_recorded FROM scores WHERE (id = @id)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@student_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@course_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "course_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@class_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "class_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@recorded_by", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "recorded_by", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@score_value", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 5, 2, "score_value", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@maximum_score", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 5, 2, "maximum_score", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@percentage", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 5, 2, "percentage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@grade_letter", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "grade_letter", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@date_recorded", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "date_recorded", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_student_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_course_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "course_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_class_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "class_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_recorded_by", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "recorded_by", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_score_value", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 5, 2, "score_value", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_maximum_score", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 5, 2, "maximum_score", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_percentage", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 5, 2, "percentage", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_grade_letter", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "grade_letter", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_date_recorded", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "date_recorded", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8022,8 +7983,21 @@ SELECT id, student_id, course_id, class_id, recorded_by, score_value, maximum_sc
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, student_id, course_id, class_id, recorded_by, score_value, maximum_sco" +
-                "re, percentage, grade_letter, date_recorded FROM dbo.scores";
+            this._commandCollection[0].CommandText = @"SELECT 
+    s.id,
+    s.student_id,
+    st.first_name + ' ' + st.last_name AS student_name,
+    c.course_name,
+    s.class_id,
+    s.recorded_by,
+    s.score_value,
+    s.maximum_score,
+    s.percentage,
+    s.grade_letter,
+    s.date_recorded
+FROM scores s
+JOIN students st ON s.student_id = st.id
+JOIN courses c ON s.course_id = c.id";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -8049,204 +8023,6 @@ SELECT id, student_id, course_id, class_id, recorded_by, score_value, maximum_sc
             Student_Scoring_ManagementDataSet.scoresDataTable dataTable = new Student_Scoring_ManagementDataSet.scoresDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Student_Scoring_ManagementDataSet.scoresDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Student_Scoring_ManagementDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "scores");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_id, int Original_student_id, int Original_course_id, int Original_class_id, int Original_recorded_by, decimal Original_score_value, decimal Original_maximum_score, decimal Original_percentage, string Original_grade_letter, System.DateTime Original_date_recorded) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_student_id));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_course_id));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_class_id));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_recorded_by));
-            this.Adapter.DeleteCommand.Parameters[5].Value = ((decimal)(Original_score_value));
-            this.Adapter.DeleteCommand.Parameters[6].Value = ((decimal)(Original_maximum_score));
-            this.Adapter.DeleteCommand.Parameters[7].Value = ((decimal)(Original_percentage));
-            if ((Original_grade_letter == null)) {
-                throw new global::System.ArgumentNullException("Original_grade_letter");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_grade_letter));
-            }
-            this.Adapter.DeleteCommand.Parameters[9].Value = ((System.DateTime)(Original_date_recorded));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int student_id, int course_id, int class_id, int recorded_by, decimal score_value, decimal maximum_score, decimal percentage, string grade_letter, System.DateTime date_recorded) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(student_id));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(course_id));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(class_id));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(recorded_by));
-            this.Adapter.InsertCommand.Parameters[4].Value = ((decimal)(score_value));
-            this.Adapter.InsertCommand.Parameters[5].Value = ((decimal)(maximum_score));
-            this.Adapter.InsertCommand.Parameters[6].Value = ((decimal)(percentage));
-            if ((grade_letter == null)) {
-                throw new global::System.ArgumentNullException("grade_letter");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(grade_letter));
-            }
-            this.Adapter.InsertCommand.Parameters[8].Value = ((System.DateTime)(date_recorded));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    int student_id, 
-                    int course_id, 
-                    int class_id, 
-                    int recorded_by, 
-                    decimal score_value, 
-                    decimal maximum_score, 
-                    decimal percentage, 
-                    string grade_letter, 
-                    System.DateTime date_recorded, 
-                    int Original_id, 
-                    int Original_student_id, 
-                    int Original_course_id, 
-                    int Original_class_id, 
-                    int Original_recorded_by, 
-                    decimal Original_score_value, 
-                    decimal Original_maximum_score, 
-                    decimal Original_percentage, 
-                    string Original_grade_letter, 
-                    System.DateTime Original_date_recorded, 
-                    int id) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(student_id));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(course_id));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(class_id));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(recorded_by));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((decimal)(score_value));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((decimal)(maximum_score));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((decimal)(percentage));
-            if ((grade_letter == null)) {
-                throw new global::System.ArgumentNullException("grade_letter");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(grade_letter));
-            }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(date_recorded));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_id));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_student_id));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_course_id));
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_class_id));
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_recorded_by));
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((decimal)(Original_score_value));
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((decimal)(Original_maximum_score));
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((decimal)(Original_percentage));
-            if ((Original_grade_letter == null)) {
-                throw new global::System.ArgumentNullException("Original_grade_letter");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_grade_letter));
-            }
-            this.Adapter.UpdateCommand.Parameters[18].Value = ((System.DateTime)(Original_date_recorded));
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(id));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    int student_id, 
-                    int course_id, 
-                    int class_id, 
-                    int recorded_by, 
-                    decimal score_value, 
-                    decimal maximum_score, 
-                    decimal percentage, 
-                    string grade_letter, 
-                    System.DateTime date_recorded, 
-                    int Original_id, 
-                    int Original_student_id, 
-                    int Original_course_id, 
-                    int Original_class_id, 
-                    int Original_recorded_by, 
-                    decimal Original_score_value, 
-                    decimal Original_maximum_score, 
-                    decimal Original_percentage, 
-                    string Original_grade_letter, 
-                    System.DateTime Original_date_recorded) {
-            return this.Update(student_id, course_id, class_id, recorded_by, score_value, maximum_score, percentage, grade_letter, date_recorded, Original_id, Original_student_id, Original_course_id, Original_class_id, Original_recorded_by, Original_score_value, Original_maximum_score, Original_percentage, Original_grade_letter, Original_date_recorded, Original_id);
         }
     }
     
@@ -9994,8 +9770,6 @@ SELECT id, role_id, email, username, password, last_login_attempt, created_at, u
         
         private rolesTableAdapter _rolesTableAdapter;
         
-        private scoresTableAdapter _scoresTableAdapter;
-        
         private studentsTableAdapter _studentsTableAdapter;
         
         private teachersTableAdapter _teachersTableAdapter;
@@ -10092,20 +9866,6 @@ SELECT id, role_id, email, username, password, last_login_attempt, created_at, u
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public scoresTableAdapter scoresTableAdapter {
-            get {
-                return this._scoresTableAdapter;
-            }
-            set {
-                this._scoresTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
         public studentsTableAdapter studentsTableAdapter {
             get {
                 return this._studentsTableAdapter;
@@ -10182,10 +9942,6 @@ SELECT id, role_id, email, username, password, last_login_attempt, created_at, u
                             && (this._rolesTableAdapter.Connection != null))) {
                     return this._rolesTableAdapter.Connection;
                 }
-                if (((this._scoresTableAdapter != null) 
-                            && (this._scoresTableAdapter.Connection != null))) {
-                    return this._scoresTableAdapter.Connection;
-                }
                 if (((this._studentsTableAdapter != null) 
                             && (this._studentsTableAdapter.Connection != null))) {
                     return this._studentsTableAdapter.Connection;
@@ -10224,9 +9980,6 @@ SELECT id, role_id, email, username, password, last_login_attempt, created_at, u
                     count = (count + 1);
                 }
                 if ((this._rolesTableAdapter != null)) {
-                    count = (count + 1);
-                }
-                if ((this._scoresTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._studentsTableAdapter != null)) {
@@ -10276,15 +10029,6 @@ SELECT id, role_id, email, username, password, last_login_attempt, created_at, u
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._coursesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.courses.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._coursesTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._grade_scaleTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.grade_scale.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -10312,12 +10056,12 @@ SELECT id, role_id, email, username, password, last_login_attempt, created_at, u
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._scoresTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.scores.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._coursesTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.courses.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._scoresTableAdapter.Update(updatedRows));
+                    result = (result + this._coursesTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -10364,14 +10108,6 @@ SELECT id, role_id, email, username, password, last_login_attempt, created_at, u
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._coursesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.courses.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._coursesTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._grade_scaleTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.grade_scale.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -10396,11 +10132,11 @@ SELECT id, role_id, email, username, password, last_login_attempt, created_at, u
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._scoresTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.scores.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._coursesTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.courses.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._scoresTableAdapter.Update(addedRows));
+                    result = (result + this._coursesTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -10430,11 +10166,11 @@ SELECT id, role_id, email, username, password, last_login_attempt, created_at, u
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._scoresTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.scores.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._coursesTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.courses.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._scoresTableAdapter.Update(deletedRows));
+                    result = (result + this._coursesTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -10459,14 +10195,6 @@ SELECT id, role_id, email, username, password, last_login_attempt, created_at, u
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._grade_scaleTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._coursesTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.courses.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._coursesTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -10555,11 +10283,6 @@ SELECT id, role_id, email, username, password, last_login_attempt, created_at, u
             }
             if (((this._rolesTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._rolesTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
-            if (((this._scoresTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._scoresTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -10653,15 +10376,6 @@ SELECT id, role_id, email, username, password, last_login_attempt, created_at, u
                     if (this._rolesTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._rolesTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._rolesTableAdapter.Adapter);
-                    }
-                }
-                if ((this._scoresTableAdapter != null)) {
-                    revertConnections.Add(this._scoresTableAdapter, this._scoresTableAdapter.Connection);
-                    this._scoresTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._scoresTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._scoresTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._scoresTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._scoresTableAdapter.Adapter);
                     }
                 }
                 if ((this._studentsTableAdapter != null)) {
@@ -10768,10 +10482,6 @@ SELECT id, role_id, email, username, password, last_login_attempt, created_at, u
                 if ((this._rolesTableAdapter != null)) {
                     this._rolesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._rolesTableAdapter]));
                     this._rolesTableAdapter.Transaction = null;
-                }
-                if ((this._scoresTableAdapter != null)) {
-                    this._scoresTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._scoresTableAdapter]));
-                    this._scoresTableAdapter.Transaction = null;
                 }
                 if ((this._studentsTableAdapter != null)) {
                     this._studentsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._studentsTableAdapter]));

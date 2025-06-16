@@ -265,7 +265,9 @@
             this.Controls.Add(this.tb_id);
             this.Controls.Add(this.label2);
             this.Name = "GradeScale";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GradeScale";
+            this.Load += new System.EventHandler(this.GradeScale_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 

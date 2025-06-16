@@ -75,7 +75,7 @@
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(182, 51);
             this.btn_add.TabIndex = 65;
-            this.btn_add.Text = "Add";
+            this.btn_add.Text = "New Student";
             this.btn_add.UseVisualStyleBackColor = true;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
@@ -355,6 +355,7 @@
             this.Controls.Add(this.tb_id);
             this.Controls.Add(this.label2);
             this.Name = "AddStudent";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddStudent";
             this.Load += new System.EventHandler(this.AddStudent_Load);
             this.ResumeLayout(false);

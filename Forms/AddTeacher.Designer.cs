@@ -287,6 +287,7 @@
             this.Controls.Add(this.tb_id);
             this.Controls.Add(this.label2);
             this.Name = "AddTeacher";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddTeacher";
             this.Load += new System.EventHandler(this.AddTeacher_Load);
             this.ResumeLayout(false);

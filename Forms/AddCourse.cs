@@ -16,13 +16,14 @@ namespace student_scoringV2.Forms
         {
             InitializeComponent();
             LoadDepartments();
+            SetFormState();
         }
 
         private void AddCourse_Load(object sender, EventArgs e)
         {
             _isEditMode = false;
             _currentCourseId = -1;
-            SetFormState();
+            //SetFormState();
         }
 
         private bool ValidateInputs()
@@ -292,6 +293,11 @@ namespace student_scoringV2.Forms
                     MessageBox.Show("Error deleting course: " + ex.Message);
                 }
             }
+        }
+
+        private void AddCourse_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

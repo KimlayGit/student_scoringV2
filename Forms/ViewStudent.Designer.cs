@@ -158,7 +158,7 @@
             this.tableAdapterManager.departmentsTableAdapter = null;
             this.tableAdapterManager.grade_scaleTableAdapter = null;
             this.tableAdapterManager.rolesTableAdapter = null;
-            this.tableAdapterManager.scoresTableAdapter = null;
+            //this.tableAdapterManager.scoresTableAdapter = null;
             this.tableAdapterManager.studentsTableAdapter = this.studentsTableAdapter;
             this.tableAdapterManager.teachersTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = student_scoringV2.Student_Scoring_ManagementDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -305,6 +305,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "ViewStudent";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ViewStudent";
             this.Load += new System.EventHandler(this.ViewStudent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_student)).EndInit();

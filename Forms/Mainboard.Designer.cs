@@ -30,21 +30,21 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
-            this.btn_adduser = new System.Windows.Forms.Button();
             this.btn_addrole = new System.Windows.Forms.Button();
+            this.btn_adduser = new System.Windows.Forms.Button();
             this.btn_addteacher = new System.Windows.Forms.Button();
-            this.btn_addclass = new System.Windows.Forms.Button();
             this.btn_adddepartment = new System.Windows.Forms.Button();
-            this.btn_addstudent = new System.Windows.Forms.Button();
-            this.btn_viewstudent = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.btn_addcourse = new System.Windows.Forms.Button();
-            this.btn_gradescale = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_addclass = new System.Windows.Forms.Button();
+            this.btn_viewstudent = new System.Windows.Forms.Button();
+            this.btn_addstudent = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.btn_scorestudent = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.lb_welcome = new System.Windows.Forms.Label();
+            this.btn_viewreport = new System.Windows.Forms.Button();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -61,36 +61,22 @@
             // sidebar
             // 
             this.sidebar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.sidebar.Controls.Add(this.btn_adduser);
             this.sidebar.Controls.Add(this.btn_addrole);
+            this.sidebar.Controls.Add(this.btn_adduser);
             this.sidebar.Controls.Add(this.btn_addteacher);
-            this.sidebar.Controls.Add(this.btn_addclass);
             this.sidebar.Controls.Add(this.btn_adddepartment);
-            this.sidebar.Controls.Add(this.btn_addstudent);
-            this.sidebar.Controls.Add(this.btn_viewstudent);
-            this.sidebar.Controls.Add(this.button4);
             this.sidebar.Controls.Add(this.btn_addcourse);
-            this.sidebar.Controls.Add(this.btn_gradescale);
-            this.sidebar.Controls.Add(this.button2);
+            this.sidebar.Controls.Add(this.btn_addclass);
+            this.sidebar.Controls.Add(this.btn_viewstudent);
+            this.sidebar.Controls.Add(this.btn_addstudent);
+            this.sidebar.Controls.Add(this.button4);
             this.sidebar.Controls.Add(this.btn_scorestudent);
+            this.sidebar.Controls.Add(this.button2);
+            this.sidebar.Controls.Add(this.btn_viewreport);
             this.sidebar.Location = new System.Drawing.Point(3, 84);
             this.sidebar.Name = "sidebar";
             this.sidebar.Size = new System.Drawing.Size(287, 1086);
             this.sidebar.TabIndex = 12;
-            // 
-            // btn_adduser
-            // 
-            this.btn_adduser.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btn_adduser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_adduser.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_adduser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_adduser.Location = new System.Drawing.Point(3, 3);
-            this.btn_adduser.Name = "btn_adduser";
-            this.btn_adduser.Size = new System.Drawing.Size(280, 51);
-            this.btn_adduser.TabIndex = 16;
-            this.btn_adduser.Text = "Add User";
-            this.btn_adduser.UseVisualStyleBackColor = false;
-            this.btn_adduser.Click += new System.EventHandler(this.btn_adduser_Click);
             // 
             // btn_addrole
             // 
@@ -98,13 +84,27 @@
             this.btn_addrole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_addrole.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btn_addrole.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_addrole.Location = new System.Drawing.Point(3, 60);
+            this.btn_addrole.Location = new System.Drawing.Point(3, 3);
             this.btn_addrole.Name = "btn_addrole";
             this.btn_addrole.Size = new System.Drawing.Size(280, 51);
             this.btn_addrole.TabIndex = 17;
             this.btn_addrole.Text = "Add Role";
             this.btn_addrole.UseVisualStyleBackColor = false;
             this.btn_addrole.Click += new System.EventHandler(this.btn_addrole_Click);
+            // 
+            // btn_adduser
+            // 
+            this.btn_adduser.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btn_adduser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_adduser.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_adduser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_adduser.Location = new System.Drawing.Point(3, 60);
+            this.btn_adduser.Name = "btn_adduser";
+            this.btn_adduser.Size = new System.Drawing.Size(280, 51);
+            this.btn_adduser.TabIndex = 16;
+            this.btn_adduser.Text = "Add User";
+            this.btn_adduser.UseVisualStyleBackColor = false;
+            this.btn_adduser.Click += new System.EventHandler(this.btn_adduser_Click);
             // 
             // btn_addteacher
             // 
@@ -120,27 +120,13 @@
             this.btn_addteacher.UseVisualStyleBackColor = false;
             this.btn_addteacher.Click += new System.EventHandler(this.btn_addteacher_Click);
             // 
-            // btn_addclass
-            // 
-            this.btn_addclass.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btn_addclass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_addclass.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_addclass.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_addclass.Location = new System.Drawing.Point(3, 174);
-            this.btn_addclass.Name = "btn_addclass";
-            this.btn_addclass.Size = new System.Drawing.Size(280, 51);
-            this.btn_addclass.TabIndex = 14;
-            this.btn_addclass.Text = "Add Classes";
-            this.btn_addclass.UseVisualStyleBackColor = false;
-            this.btn_addclass.Click += new System.EventHandler(this.btn_addclass_Click);
-            // 
             // btn_adddepartment
             // 
             this.btn_adddepartment.BackColor = System.Drawing.SystemColors.Highlight;
             this.btn_adddepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_adddepartment.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btn_adddepartment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_adddepartment.Location = new System.Drawing.Point(3, 231);
+            this.btn_adddepartment.Location = new System.Drawing.Point(3, 174);
             this.btn_adddepartment.Name = "btn_adddepartment";
             this.btn_adddepartment.Size = new System.Drawing.Size(280, 51);
             this.btn_adddepartment.TabIndex = 15;
@@ -148,19 +134,32 @@
             this.btn_adddepartment.UseVisualStyleBackColor = false;
             this.btn_adddepartment.Click += new System.EventHandler(this.btn_adddepartment_Click);
             // 
-            // btn_addstudent
+            // btn_addcourse
             // 
-            this.btn_addstudent.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btn_addstudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_addstudent.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_addstudent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_addstudent.Location = new System.Drawing.Point(3, 288);
-            this.btn_addstudent.Name = "btn_addstudent";
-            this.btn_addstudent.Size = new System.Drawing.Size(280, 51);
-            this.btn_addstudent.TabIndex = 2;
-            this.btn_addstudent.Text = "Add Student";
-            this.btn_addstudent.UseVisualStyleBackColor = false;
-            this.btn_addstudent.Click += new System.EventHandler(this.btn_addstudent_Click);
+            this.btn_addcourse.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btn_addcourse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_addcourse.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_addcourse.Location = new System.Drawing.Point(3, 231);
+            this.btn_addcourse.Name = "btn_addcourse";
+            this.btn_addcourse.Size = new System.Drawing.Size(280, 51);
+            this.btn_addcourse.TabIndex = 18;
+            this.btn_addcourse.Text = "Add Course";
+            this.btn_addcourse.UseVisualStyleBackColor = false;
+            this.btn_addcourse.Click += new System.EventHandler(this.btn_addcourse_Click);
+            // 
+            // btn_addclass
+            // 
+            this.btn_addclass.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btn_addclass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_addclass.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_addclass.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_addclass.Location = new System.Drawing.Point(3, 288);
+            this.btn_addclass.Name = "btn_addclass";
+            this.btn_addclass.Size = new System.Drawing.Size(280, 51);
+            this.btn_addclass.TabIndex = 14;
+            this.btn_addclass.Text = "Add Classes";
+            this.btn_addclass.UseVisualStyleBackColor = false;
+            this.btn_addclass.Click += new System.EventHandler(this.btn_addclass_Click);
             // 
             // btn_viewstudent
             // 
@@ -175,12 +174,26 @@
             this.btn_viewstudent.UseVisualStyleBackColor = false;
             this.btn_viewstudent.Click += new System.EventHandler(this.button3_Click);
             // 
+            // btn_addstudent
+            // 
+            this.btn_addstudent.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btn_addstudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_addstudent.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_addstudent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_addstudent.Location = new System.Drawing.Point(3, 402);
+            this.btn_addstudent.Name = "btn_addstudent";
+            this.btn_addstudent.Size = new System.Drawing.Size(280, 51);
+            this.btn_addstudent.TabIndex = 2;
+            this.btn_addstudent.Text = "Add Student";
+            this.btn_addstudent.UseVisualStyleBackColor = false;
+            this.btn_addstudent.Click += new System.EventHandler(this.btn_addstudent_Click);
+            // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.SystemColors.Highlight;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button4.Location = new System.Drawing.Point(3, 402);
+            this.button4.Location = new System.Drawing.Point(3, 459);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(280, 51);
             this.button4.TabIndex = 5;
@@ -188,31 +201,18 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // btn_addcourse
+            // btn_scorestudent
             // 
-            this.btn_addcourse.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btn_addcourse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_addcourse.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_addcourse.Location = new System.Drawing.Point(3, 459);
-            this.btn_addcourse.Name = "btn_addcourse";
-            this.btn_addcourse.Size = new System.Drawing.Size(280, 51);
-            this.btn_addcourse.TabIndex = 18;
-            this.btn_addcourse.Text = "Add Course";
-            this.btn_addcourse.UseVisualStyleBackColor = false;
-            this.btn_addcourse.Click += new System.EventHandler(this.btn_addcourse_Click);
-            // 
-            // btn_gradescale
-            // 
-            this.btn_gradescale.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btn_gradescale.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_gradescale.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_gradescale.Location = new System.Drawing.Point(3, 516);
-            this.btn_gradescale.Name = "btn_gradescale";
-            this.btn_gradescale.Size = new System.Drawing.Size(280, 51);
-            this.btn_gradescale.TabIndex = 19;
-            this.btn_gradescale.Text = "Add Grade Scale";
-            this.btn_gradescale.UseVisualStyleBackColor = false;
-            this.btn_gradescale.Click += new System.EventHandler(this.btn_gradescale_Click);
+            this.btn_scorestudent.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btn_scorestudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_scorestudent.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_scorestudent.Location = new System.Drawing.Point(3, 516);
+            this.btn_scorestudent.Name = "btn_scorestudent";
+            this.btn_scorestudent.Size = new System.Drawing.Size(280, 51);
+            this.btn_scorestudent.TabIndex = 20;
+            this.btn_scorestudent.Text = "View Score";
+            this.btn_scorestudent.UseVisualStyleBackColor = false;
+            this.btn_scorestudent.Click += new System.EventHandler(this.btn_scorestudent_Click);
             // 
             // button2
             // 
@@ -226,19 +226,6 @@
             this.button2.Text = "Log Out";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // btn_scorestudent
-            // 
-            this.btn_scorestudent.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btn_scorestudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_scorestudent.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_scorestudent.Location = new System.Drawing.Point(3, 630);
-            this.btn_scorestudent.Name = "btn_scorestudent";
-            this.btn_scorestudent.Size = new System.Drawing.Size(280, 51);
-            this.btn_scorestudent.TabIndex = 20;
-            this.btn_scorestudent.Text = "View Score";
-            this.btn_scorestudent.UseVisualStyleBackColor = false;
-            this.btn_scorestudent.Click += new System.EventHandler(this.btn_scorestudent_Click);
             // 
             // panel1
             // 
@@ -268,6 +255,19 @@
             this.lb_welcome.TabIndex = 10;
             this.lb_welcome.Text = "Welcome, Admin!";
             // 
+            // btn_viewreport
+            // 
+            this.btn_viewreport.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btn_viewreport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_viewreport.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_viewreport.Location = new System.Drawing.Point(3, 630);
+            this.btn_viewreport.Name = "btn_viewreport";
+            this.btn_viewreport.Size = new System.Drawing.Size(280, 51);
+            this.btn_viewreport.TabIndex = 14;
+            this.btn_viewreport.Text = "View Report";
+            this.btn_viewreport.UseVisualStyleBackColor = false;
+            this.btn_viewreport.Click += new System.EventHandler(this.btn_viewreport_Click);
+            // 
             // Mainboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -278,6 +278,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lb_welcome);
             this.Name = "Mainboard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mainboard";
             this.Load += new System.EventHandler(this.Mainboard_Load);
             this.sidebar.ResumeLayout(false);
@@ -304,7 +305,7 @@
         private System.Windows.Forms.Button btn_adduser;
         private System.Windows.Forms.Button btn_addrole;
         private System.Windows.Forms.Button btn_addcourse;
-        private System.Windows.Forms.Button btn_gradescale;
         private System.Windows.Forms.Button btn_scorestudent;
+        private System.Windows.Forms.Button btn_viewreport;
     }
 }

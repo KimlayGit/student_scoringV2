@@ -72,12 +72,12 @@ namespace student_scoringV2.Forms
             addCourse.Show();
         }
 
-        private void btn_gradescale_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            GradeScale addGradeScale = new GradeScale();
-            addGradeScale.Show();
-        }
+        //private void btn_gradescale_Click(object sender, EventArgs e)
+        //{
+        //    this.Hide();
+        //    GradeScale addGradeScale = new GradeScale();
+        //    addGradeScale.Show();
+        //}
 
         private void btn_addstudent_Click(object sender, EventArgs e)
         {
@@ -106,6 +106,13 @@ namespace student_scoringV2.Forms
             ViewScore viewScore = new ViewScore();
             viewScore.Show();
           
+        }
+
+        private void btn_viewreport_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            StudentReport studentReport = new StudentReport();
+            studentReport.Show();
         }
     }
 }

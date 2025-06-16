@@ -21,6 +21,7 @@ namespace student_scoringV2.Forms
             InitializeComponent();
             InitializeGPAFunctionality();
             SetupGradeLetterAutoComplete();
+            SetFormState();
         }
 
         private void SetupGradeLetterAutoComplete()
@@ -416,6 +417,11 @@ namespace student_scoringV2.Forms
         {
             this.Hide();
             new Mainboard().Show();
+        }
+
+        private void GradeScale_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

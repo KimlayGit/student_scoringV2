@@ -83,7 +83,6 @@
             this.tb_id.Name = "tb_id";
             this.tb_id.Size = new System.Drawing.Size(284, 35);
             this.tb_id.TabIndex = 31;
-            //this.tb_id.TextChanged += new System.EventHandler(this.tb_id_TextChanged);
             // 
             // label5
             // 
@@ -114,7 +113,6 @@
             this.label2.Size = new System.Drawing.Size(57, 37);
             this.label2.TabIndex = 28;
             this.label2.Text = "ID:";
-            //this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -152,7 +150,7 @@
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(182, 51);
             this.btn_add.TabIndex = 39;
-            this.btn_add.Text = "Add";
+            this.btn_add.Text = "New Class";
             this.btn_add.UseVisualStyleBackColor = true;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
@@ -243,6 +241,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Name = "AddClasses";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddClasses";
             this.Load += new System.EventHandler(this.AddClasses_Load);
             this.ResumeLayout(false);

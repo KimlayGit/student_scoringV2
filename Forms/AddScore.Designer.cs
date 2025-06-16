@@ -122,7 +122,7 @@
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(182, 51);
             this.btn_add.TabIndex = 60;
-            this.btn_add.Text = "Add";
+            this.btn_add.Text = "Add Score";
             this.btn_add.UseVisualStyleBackColor = true;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
@@ -336,6 +336,7 @@
             this.Controls.Add(this.tb_id);
             this.Controls.Add(this.label4);
             this.Name = "AddScore";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddAssessment";
             this.Load += new System.EventHandler(this.AddScore_Load);
             this.ResumeLayout(false);

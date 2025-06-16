@@ -114,7 +114,6 @@ namespace student_scoringV2.Forms
             tb_classname.ReadOnly = !_isEditMode;
             tb_semester.ReadOnly = !_isEditMode;
             tb_academicyear.ReadOnly = !_isEditMode;
-
             btn_add.Enabled = !_isEditMode;
             btn_edit.Text = _isEditMode ? "Save" : "Edit";
             btn_delete.Enabled = !_isEditMode && _currentClassId > 0;

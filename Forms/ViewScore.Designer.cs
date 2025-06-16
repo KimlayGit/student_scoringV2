@@ -123,6 +123,7 @@
             this.Controls.Add(this.dgv_studentscore);
             this.Controls.Add(this.label1);
             this.Name = "ViewScore";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ViewScore";
             this.Load += new System.EventHandler(this.ViewScore_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_studentscore)).EndInit();
